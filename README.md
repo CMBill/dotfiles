@@ -5,7 +5,7 @@
 | 源路径                    | 目标链接                  | 软件                             | 说明                                                       |
 | ------------------------- | ------------------------- | -------------------------------- | ---------------------------------------------------------- |
 | `dotfiles/.zshrc`         | `~/.zshrc`                | [Zsh](https://www.zsh.org/)      | Shell 配置，含插件、别名、编辑器等设置                     |
-| `dotfiles/.gitconfig`     | `~/.gitconfig`            | [Git](https://git-scm.com/)      | Git 全局配置，含 GPG 签名                                  |
+| `dotfiles/.gitconfig`     | `~/.gitconfig`            | [Git](https://git-scm.com/)      | Git 全局配置，含 GPG 签名，使用前应先配置 GPG 私钥         |
 | `dotfiles/.npmrc`         | `~/.npmrc`                | [npm](https://www.npmjs.com/)    | npm 镜像源（淘宝镜像）                                     |
 | `dotfiles/gpg-agent.conf` | `~/.gnupg/gpg-agent.conf` | [GnuPG](https://gnupg.org/)      | GPG Agent 配置，指定 pinentry 程序                         |
 | `dotfiles/starship.toml`  | `~/.config/starship.toml` | [Starship](https://starship.rs/) | 跨 Shell 终端提示符美化                                    |
