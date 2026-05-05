@@ -7,7 +7,6 @@
 ```
 dotfiles/nvim/
 ├── init.lua                 # 入口文件，加载 lazy.lua
-├── lazy-lock.json           # 插件版本锁定文件
 ├── lua/
 │   ├── config/
 │   │   └── lazy.lua         # lazy.nvim 引导与初始化
