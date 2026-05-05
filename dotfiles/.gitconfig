@@ -1,0 +1,10 @@
+[init]
+	defaultBranch = master
+[user]
+	name = CMBill
+	email = callmebill@billw.cn
+	signingkey = B5242CD91F4D9773
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
