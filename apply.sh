@@ -45,7 +45,7 @@ create_symlink() {
 create_symlink "$SOURCE_DIR/.zshrc" "$HOME/.zshrc"
 create_symlink "$SOURCE_DIR/.gitconfig" "$HOME/.gitconfig"
 create_symlink "$SOURCE_DIR/.npmrc" "$HOME/.npmrc"
-create_symlink "$SOURCE_DIR/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
+# create_symlink "$SOURCE_DIR/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
 
 # 2. 位于 ~/.config 目录的配置
 create_symlink "$SOURCE_DIR/nvim" "$HOME/.config/nvim"
