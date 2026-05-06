@@ -42,8 +42,8 @@ create_symlink() {
 # 明确的路径映射表 (Explicit Mapping)
 
 # 1. 位于 Home 目录的配置
-create_symlink "$SOURCE_DIR/.zshrc" "$HOME/.zshrc"
-create_symlink "$SOURCE_DIR/.gitconfig" "$HOME/.gitconfig"
+#create_symlink "$SOURCE_DIR/.zshrc" "$HOME/.zshrc"
+#create_symlink "$SOURCE_DIR/.gitconfig" "$HOME/.gitconfig"
 create_symlink "$SOURCE_DIR/.npmrc" "$HOME/.npmrc"
 # create_symlink "$SOURCE_DIR/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
 
