@@ -51,5 +51,6 @@ create_symlink "$SOURCE_DIR/.npmrc" "$HOME/.npmrc"
 create_symlink "$SOURCE_DIR/nvim" "$HOME/.config/nvim"
 create_symlink "$SOURCE_DIR/starship.toml" "$HOME/.config/starship.toml"
 create_symlink "$SOURCE_DIR/uv" "$HOME/.config/uv"
+create_symlink "$SOURCE_DIR/wezterm" "$HOME/.config/wezterm"
 
 echo "Deployment completed successfully!"
