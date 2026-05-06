@@ -39,10 +39,9 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light agkozak/zsh-z
-zinit ice as"command" from"gh-r" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" src"init.zsh"
-zinit light starship/starship
+
+# Starship
+eval "$(starship init zsh)"
 
 # 终端语言
 export LANG=zh_CN.UTF-8
