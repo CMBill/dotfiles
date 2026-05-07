@@ -125,9 +125,15 @@ function Create-Symlink {
 # 1. 位于 Home 目录的配置
 Create-Symlink -SourcePath (Join-Path $SourceDir '.npmrc') -TargetPath (Join-Path $HomeDir '.npmrc')
 
-# 2. 位于 ~/.config 目录的配置（wezterm / starship 在 Windows 也沿用此路径）
+# 2. 位于 ~/.config 目录的配置（wezterm / starship / opencode 在 Windows 也沿用此路径）
 Create-Symlink -SourcePath (Join-Path $SourceDir 'starship.toml') -TargetPath (Join-Path $ConfigDir 'starship.toml')
 Create-Symlink -SourcePath (Join-Path $SourceDir 'wezterm') -TargetPath (Join-Path $ConfigDir 'wezterm')
+
+$OpenCodeSource = Join-Path $SourceDir 'opencode'
+$OpenCodeTarget = Join-Path $ConfigDir 'opencode'
+Get-ChildItem -Path $OpenCodeSource -File | ForEach-Object {
+    Create-Symlink -SourcePath $_.FullName -TargetPath (Join-Path $OpenCodeTarget $_.Name)
+}
 
 # 3. Windows 特有路径
 Create-Symlink -SourcePath (Join-Path $SourceDir 'nvim') -TargetPath (Join-Path $env:LOCALAPPDATA 'nvim')
