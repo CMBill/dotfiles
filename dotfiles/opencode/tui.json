@@ -1,7 +1,15 @@
 {
   "$schema": "https://opencode.ai/tui.json",
   "theme": "catppuccin",
+  "keybinds": {
+    "messages_previous": "ctrl+up",
+    "messages_next": "ctrl+down",
+    "messages_last_user": "ctrl+u"
+  },
   "plugin": [
     "@cortexkit/opencode-magic-context@latest"
-  ]
+  ],
+  "scroll_acceleration": {
+    "enabled": true
+  }
 }
