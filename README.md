@@ -4,14 +4,14 @@
 
 ## 配置文件一览
 
-| 源路径                   | 目标链接 (Windows)                    | 软件                                       | 说明                                                        |
-| ------------------------ | ------------------------------------- | ------------------------------------------ | ----------------------------------------------------------- |
-| `dotfiles/.npmrc`        | `%USERPROFILE%\.npmrc`                | [npm](https://www.npmjs.com/)              | npm 镜像源（npmmirror）                                     |
-| `dotfiles/starship.toml` | `%USERPROFILE%\.config\starship.toml` | [Starship](https://starship.rs/)           | 跨 Shell 终端提示符美化，含 Nerd Fonts 图标映射             |
-| `dotfiles/wezterm/`      | `%USERPROFILE%\.config\wezterm`       | [WezTerm](https://wezfurlong.org/wezterm/) | 模块化终端配置（字体、外观、快捷键、事件），默认 PowerShell |
-| `dotfiles/nvim/`         | `%LOCALAPPDATA%\nvim`                 | [Neovim](https://neovim.io/)               | 编辑器配置，详见 [nvim/README.md](dotfiles/nvim/README.md)  |
-| `dotfiles/uv/`           | `%APPDATA%\uv`                        | [uv](https://docs.astral.sh/uv/)           | Python 包管理器，清华 PyPI 镜像                             |
-| `dotfiles/opencode/`     | `%USERPROFILE%\.config\opencode`      | [OpenCode](https://opencode.ai)            | AI 编程助手配置（superpowers、smart-title、magic-context）  |
+| 源路径                         | 目标链接 (Windows)                    | 软件                                       | 说明                                                                                                            |
+| ------------------------------ | ------------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `dotfiles/.npmrc`              | `%USERPROFILE%\.npmrc`                | [npm](https://www.npmjs.com/)              | npm 镜像源（npmmirror）                                                                                         |
+| `dotfiles/starship.toml`       | `%USERPROFILE%\.config\starship.toml` | [Starship](https://starship.rs/)           | 跨 Shell 终端提示符美化，含 Nerd Fonts 图标映射                                                                 |
+| `dotfiles/wezterm/` *(子模块)* | `%USERPROFILE%\.config\wezterm`       | [WezTerm](https://wezfurlong.org/wezterm/) | 模块化终端配置（字体、外观、快捷键、事件），独立仓库 [wezterm-config](https://github.com/CMBill/wezterm-config) |
+| `dotfiles/nvim/`               | `%LOCALAPPDATA%\nvim`                 | [Neovim](https://neovim.io/)               | 编辑器配置，详见 [nvim/README.md](dotfiles/nvim/README.md)                                                      |
+| `dotfiles/uv/`                 | `%APPDATA%\uv`                        | [uv](https://docs.astral.sh/uv/)           | Python 包管理器，清华 PyPI 镜像                                                                                 |
+| `dotfiles/opencode/`           | `%USERPROFILE%\.config\opencode`      | [OpenCode](https://opencode.ai)            | AI 编程助手配置（superpowers、smart-title、magic-context）                                                      |
 
 ## 部署
 
@@ -22,6 +22,11 @@ powershell -ExecutionPolicy Bypass -File .\apply.ps1
 ```
 
 > 脚本会自动创建 `%USERPROFILE%\.config`、`%LOCALAPPDATA%\nvim`、`%APPDATA%\uv` 等必要目录。
+>
+> **wezterm** 为 Git 子模块。克隆仓库时请使用 `git clone --recurse-submodules`，或克隆后执行：
+> ```powershell
+> git submodule update --init
+> ```
 
 ## 依赖项
 

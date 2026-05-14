@@ -127,7 +127,13 @@ Create-Symlink -SourcePath (Join-Path $SourceDir '.npmrc') -TargetPath (Join-Pat
 
 # 2. 位于 ~/.config 目录的配置（wezterm / starship / opencode 在 Windows 也沿用此路径）
 Create-Symlink -SourcePath (Join-Path $SourceDir 'starship.toml') -TargetPath (Join-Path $ConfigDir 'starship.toml')
-Create-Symlink -SourcePath (Join-Path $SourceDir 'wezterm') -TargetPath (Join-Path $ConfigDir 'wezterm')
+# 检查 wezterm 子模块是否已初始化
+$WeztermModule = Join-Path $SourceDir 'wezterm'
+if ((Test-Path $WeztermModule) -and -not (Test-Path (Join-Path $WeztermModule 'wezterm.lua'))) {
+    Write-Warning "wezterm submodule not initialized. Run: git submodule update --init"
+}
+
+Create-Symlink -SourcePath $WeztermModule -TargetPath (Join-Path $ConfigDir 'wezterm')
 
 $OpenCodeSource = Join-Path $SourceDir 'opencode'
 $OpenCodeTarget = Join-Path $ConfigDir 'opencode'
