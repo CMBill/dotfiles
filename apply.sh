@@ -51,7 +51,11 @@ create_symlink "$SOURCE_DIR/.npmrc" "$HOME/.npmrc"
 create_symlink "$SOURCE_DIR/nvim" "$HOME/.config/nvim"
 create_symlink "$SOURCE_DIR/starship.toml" "$HOME/.config/starship.toml"
 create_symlink "$SOURCE_DIR/uv" "$HOME/.config/uv"
-create_symlink "$SOURCE_DIR/wezterm" "$HOME/.config/wezterm"
+if [ -f "$SOURCE_DIR/wezterm/wezterm.lua" ]; then
+    create_symlink "$SOURCE_DIR/wezterm" "$HOME/.config/wezterm"
+else
+    echo "Warning: wezterm submodule not initialized. Run: git submodule update --init"
+fi
 
 # 3. 位于 ~/.config/opencode 目录的配置 (逐个文件链接，避免覆盖 node_modules 等运行时文件)
 mkdir -p "$HOME/.config/opencode"
