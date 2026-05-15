@@ -59,7 +59,7 @@ create_symlink "$SOURCE_DIR/opencode/magic-context.jsonc" "$HOME/.config/opencod
 create_symlink "$SOURCE_DIR/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
 create_symlink "$SOURCE_DIR/opencode/smart-title.jsonc" "$HOME/.config/opencode/smart-title.jsonc"
 create_symlink "$SOURCE_DIR/opencode/tui.json" "$HOME/.config/opencode/tui.json"
-create_symlink "$SOURCE_DIR/wezterm" "$XDG_CONFIG_HOME/.config/wezterm"
+create_symlink "$SOURCE_DIR/wezterm" "$HOME/.config/wezterm"
 
 # 3. 位于 ~/.local/share 目录的配置
 create_symlink "$SOURCE_DIR/rime" "$HOME/.local/share/fcitx5/rime"
