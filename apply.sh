@@ -51,5 +51,13 @@ create_symlink "$SOURCE_DIR/.npmrc" "$HOME/.npmrc"
 create_symlink "$SOURCE_DIR/nvim" "$HOME/.config/nvim"
 create_symlink "$SOURCE_DIR/starship.toml" "$HOME/.config/starship.toml"
 create_symlink "$SOURCE_DIR/uv" "$HOME/.config/uv"
+# opencode: 只链接配置文件，不链接状态文件
+mkdir -p "$HOME/.config/opencode"
+create_symlink "$SOURCE_DIR/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
+create_symlink "$SOURCE_DIR/opencode/magic-context.jsonc" "$HOME/.config/opencode/magic-context.jsonc"
+create_symlink "$SOURCE_DIR/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
+create_symlink "$SOURCE_DIR/opencode/smart-title.jsonc" "$HOME/.config/opencode/smart-title.jsonc"
+create_symlink "$SOURCE_DIR/opencode/tui.json" "$HOME/.config/opencode/tui.json"
+create_symlink "$SOURCE_DIR/wezterm" "$XDG_CONFIG_HOME/.config/wezterm"
 
 echo "Deployment completed successfully!"

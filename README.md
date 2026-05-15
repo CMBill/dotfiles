@@ -8,8 +8,10 @@
 | `dotfiles/.gitconfig`     | `~/.gitconfig`            | [Git](https://git-scm.com/)      | Git 全局配置，含 GPG 签名，使用前应先配置 GPG 私钥         |
 | `dotfiles/.npmrc`         | `~/.npmrc`                | [npm](https://www.npmjs.com/)    | npm 镜像源（淘宝镜像）                                     |
 | `dotfiles/starship.toml`  | `~/.config/starship.toml` | [Starship](https://starship.rs/) | 跨 Shell 终端提示符美化                                    |
-| `dotfiles/uv/uv.toml`     | `~/.config/uv/uv.toml`    | [uv](https://docs.astral.sh/uv/) | Python 包管理器，清华 PyPI 镜像                            |
-| `dotfiles/nvim/`          | `~/.config/nvim/`         | [Neovim](https://neovim.io/)     | 编辑器配置，详见 [nvim/README.md](dotfiles/nvim/README.md) |
+| `dotfiles/uv/uv.toml`     | `~/.config/uv/uv.toml`    | [uv](https://docs.astral.sh/uv/)       | Python 包管理器，清华 PyPI 镜像                            |
+| `dotfiles/opencode/`     | `~/.config/opencode/`    | [OpenCode](https://opencode.ai/)      | AI 编码助手终端界面配置                                    |
+| `dotfiles/wezterm/`      | `~/.config/wezterm/`     | [WezTerm](https://wezfurlong.org/wezterm/) | GPU 加速终端模拟器，子模块引入                             |
+| `dotfiles/nvim/`         | `~/.config/nvim/`        | [Neovim](https://neovim.io/)           | 编辑器配置，详见 [nvim/README.md](dotfiles/nvim/README.md) |
 <!-- | `dotfiles/gpg-agent.conf` | `~/.gnupg/gpg-agent.conf` | [GnuPG](https://gnupg.org/)      | GPG Agent 配置，指定 pinentry 程序                         | -->
 
 ## 脚本用法
@@ -19,8 +21,8 @@
 该脚本将仓库中的配置文件通过软链接部署到系统中对应的位置。如果目标位置已存在文件或目录，会自动备份为 `.bak` 后缀。
 
 ```bash
-# 克隆仓库
-git clone https://github.com/CMBill/dotfiles.git ~/dotfiles
+# 克隆仓库（含子模块）
+git clone --recursive https://github.com/CMBill/dotfiles.git ~/dotfiles
 
 # 运行部署脚本
 cd ~/dotfiles
@@ -38,3 +40,4 @@ bash apply.sh
   - `zinit`
 - **Starship**：需通过包管理器安装
 - **Neovim**：需安装 >= 0.9 版本，首次启动时会自动安装 lazy.nvim 及所有插件
+- **WezTerm**：配置文件通过 git 子模块引入，克隆时需加 `--recursive`
