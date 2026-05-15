@@ -10,6 +10,7 @@ echo "Starting dotfiles symlink deployment..."
 
 # 确保必要的系统目录存在
 mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.local/share/fcitx5"
 
 # 通用函数：创建软链接，若目标存在则备份为 .bak
 create_symlink() {
@@ -59,5 +60,8 @@ create_symlink "$SOURCE_DIR/opencode/opencode.json" "$HOME/.config/opencode/open
 create_symlink "$SOURCE_DIR/opencode/smart-title.jsonc" "$HOME/.config/opencode/smart-title.jsonc"
 create_symlink "$SOURCE_DIR/opencode/tui.json" "$HOME/.config/opencode/tui.json"
 create_symlink "$SOURCE_DIR/wezterm" "$XDG_CONFIG_HOME/.config/wezterm"
+
+# 3. 位于 ~/.local/share 目录的配置
+create_symlink "$SOURCE_DIR/rime" "$HOME/.local/share/fcitx5/rime"
 
 echo "Deployment completed successfully!"
