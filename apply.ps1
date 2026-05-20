@@ -25,7 +25,7 @@ Write-Host "Starting dotfiles deployment from: $SourceDir"
 
 # 确保必要目录存在
 $ConfigDir = Join-Path $HomeDir '.config'
-@($ConfigDir, "$env:LOCALAPPDATA\nvim", "$env:APPDATA\uv") | ForEach-Object {
+@($ConfigDir, "$env:LOCALAPPDATA\nvim", "$env:APPDATA\uv", "$env:APPDATA\alacritty") | ForEach-Object {
     if (-not (Test-Path $_)) {
         New-Item -ItemType Directory -Path $_ -Force | Out-Null
     }
@@ -142,5 +142,6 @@ Get-ChildItem -Path $OpenCodeSource -File | ForEach-Object {
 # 3. Windows 特有路径
 Create-Symlink -SourcePath (Join-Path $SourceDir 'nvim') -TargetPath (Join-Path $env:LOCALAPPDATA 'nvim')
 Create-Symlink -SourcePath (Join-Path $SourceDir 'uv') -TargetPath (Join-Path $env:APPDATA 'uv')
+Create-Symlink -SourcePath (Join-Path $SourceDir 'alacritty') -TargetPath (Join-Path $env:APPDATA 'alacritty')
 
 Write-Host "Deployment completed successfully!"
