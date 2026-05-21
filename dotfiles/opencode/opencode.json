@@ -6,7 +6,8 @@
     "@mohak34/opencode-notifier@latest",
     "@ramtinj95/opencode-tokenscope",
     "@tarquinen/opencode-smart-title",
-    "@cortexkit/opencode-magic-context"
+    "@cortexkit/opencode-magic-context",
+    "opencode-visual-cache@latest"
   ],
   "compaction": {
     "auto": false,

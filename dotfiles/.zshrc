@@ -50,6 +50,7 @@ export LC_ALL=zh_CN.UTF-8
 # 别名
 alias ls='ls --color=auto'
 alias ll='ls -alhF'
+alias lsd='lsd -alhF'
 alias grep='grep --color=auto'
 
 export PATH="$PATH:/mnt/c/Program Files/Microsoft VS Code/bin"
@@ -61,3 +62,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# opencode
+export PATH=/home/bill/.opencode/bin:$PATH
