@@ -1,0 +1,14 @@
+{
+  "lastChangelogVersion": "0.78.0",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-flash",
+  "defaultThinkingLevel": "xhigh",
+  "packages": [
+    "npm:pi-cache-optimizer",
+    "https://github.com/ssdiwu/pi-i18n@feat/footer-mode-system-default"
+  ],
+  "theme": "dark",
+  "npmCommand": [
+    "pnpm"
+  ]
+}

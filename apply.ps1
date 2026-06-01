@@ -25,7 +25,7 @@ Write-Host "Starting dotfiles deployment from: $SourceDir"
 
 # 确保必要目录存在
 $ConfigDir = Join-Path $HomeDir '.config'
-@($ConfigDir, "$env:LOCALAPPDATA\nvim", "$env:APPDATA\uv", "$env:APPDATA\alacritty", "$env:APPDATA\Zellij") | ForEach-Object {
+@($ConfigDir, "$env:LOCALAPPDATA\nvim", "$env:APPDATA\alacritty", "$env:APPDATA\Zellij", "$HomeDir\.pi\agent") | ForEach-Object {
     if (-not (Test-Path $_)) {
         New-Item -ItemType Directory -Path $_ -Force | Out-Null
     }
@@ -141,8 +141,14 @@ Get-ChildItem -Path $OpenCodeSource -File | ForEach-Object {
 
 # 3. Windows 特有路径
 Create-Symlink -SourcePath (Join-Path $SourceDir 'nvim') -TargetPath (Join-Path $env:LOCALAPPDATA 'nvim')
-Create-Symlink -SourcePath (Join-Path $SourceDir 'uv') -TargetPath (Join-Path $env:APPDATA 'uv')
 Create-Symlink -SourcePath (Join-Path $SourceDir 'alacritty') -TargetPath (Join-Path $env:APPDATA 'alacritty')
 Create-Symlink -SourcePath (Join-Path $SourceDir 'zellij') -TargetPath (Join-Path $env:APPDATA 'Zellij\config')
+
+# 4. pi 配置（仅 models.json 和 settings.json）
+$PiSource = Join-Path $SourceDir 'pi'
+$PiTarget = Join-Path $HomeDir '.pi\agent'
+Get-ChildItem -Path $PiSource -File | ForEach-Object {
+    Create-Symlink -SourcePath $_.FullName -TargetPath (Join-Path $PiTarget $_.Name)
+}
 
 Write-Host "Deployment completed successfully!"
