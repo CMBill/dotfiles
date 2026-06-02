@@ -1,3 +1,6 @@
 [submodule "dotfiles/wezterm"]
 	path = dotfiles/wezterm
 	url = git@github.com:CMBill/wezterm-config.git
+[submodule "dotfiles/rime"]
+	path = dotfiles/rime
+	url = https://github.com/CMBill/oh-my-rime.git

@@ -56,13 +56,19 @@ if [ -f "$SOURCE_DIR/wezterm/wezterm.lua" ]; then
 else
     echo "Warning: wezterm submodule not initialized. Run: git submodule update --init"
 fi
+mkdir -p "$HOME/.config/ibus"
+if [ -f "$SOURCE_DIR/rime/default.yaml" ]; then
+    create_symlink "$SOURCE_DIR/rime" "$HOME/.config/ibus/rime"
+else
+    echo "Warning: rime submodule not initialized. Run: git submodule update --init"
+fi
 
 # 3. 位于 ~/.config/opencode 目录的配置 (逐个文件链接，避免覆盖 node_modules 等运行时文件)
 mkdir -p "$HOME/.config/opencode"
-create_symlink "$SOURCE_DIR/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
-create_symlink "$SOURCE_DIR/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
-create_symlink "$SOURCE_DIR/opencode/tui.json" "$HOME/.config/opencode/tui.json"
-create_symlink "$SOURCE_DIR/opencode/smart-title.jsonc" "$HOME/.config/opencode/smart-title.jsonc"
-create_symlink "$SOURCE_DIR/opencode/magic-context.jsonc" "$HOME/.config/opencode/magic-context.jsonc"
+for file in "$SOURCE_DIR"/opencode/*; do
+    if [ -f "$file" ]; then
+        create_symlink "$file" "$HOME/.config/opencode/$(basename "$file")"
+    fi
+done
 
 echo "Deployment completed successfully!"

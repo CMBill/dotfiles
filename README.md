@@ -9,6 +9,7 @@
 | `dotfiles/uv/uv.toml`    | `~/.config/uv/uv.toml`    | [uv](https://docs.astral.sh/uv/)           | Python 包管理器，清华 PyPI 镜像                                |
 | `dotfiles/nvim/`         | `~/.config/nvim/`         | [Neovim](https://neovim.io/)               | 编辑器配置，详见 [nvim/README.md](dotfiles/nvim/README.md)     |
 | `dotfiles/wezterm/`      | `~/.config/wezterm/`      | [WezTerm](https://wezfurlong.org/wezterm/) | 终端模拟器配置（Git 子模块），含字体、外观、快捷键及标签页事件 |
+| `dotfiles/rime/`         | `~/.config/ibus/rime/`    | [Rime](https://rime.im/)                   | 中州韵输入法引擎配置（Git 子模块），薄荷输入法方案，支持拼音/双拼/五笔 |
 | <!--                     | `dotfiles/.zshrc`         | `~/.zshrc`                                 | [Zsh](https://www.zsh.org/)                                    | Shell 配置，含插件、别名、编辑器等设置             | --> |
 | <!--                     | `dotfiles/.gitconfig`     | `~/.gitconfig`                             | [Git](https://git-scm.com/)                                    | Git 全局配置，含 GPG 签名，使用前应先配置 GPG 私钥 | --> |
 | <!--                     | `dotfiles/gpg-agent.conf` | `~/.gnupg/gpg-agent.conf`                  | [GnuPG](https://gnupg.org/)                                    | GPG Agent 配置，指定 pinentry 程序                 | --> |
@@ -38,3 +39,4 @@ bash apply.sh
 - **Starship**：需通过包管理器安装
 - **Neovim**：需安装 >= 0.9 版本，首次启动时会自动安装 lazy.nvim 及所有插件
 - **WezTerm**：需安装 WezTerm，配置使用 LXGW WenKai Mono 及 JetBrainsMono Nerd Font 字体，请确保已安装
+- **Rime**：需安装 ibus-rime（Ubuntu: `sudo apt install ibus-rime`），首次部署后需在 Rime 输入法中执行重新部署
