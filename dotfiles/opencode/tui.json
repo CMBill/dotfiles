@@ -7,7 +7,12 @@
     "messages_last_user": "ctrl+u"
   },
   "plugin": [
-    "@cortexkit/opencode-magic-context@latest"
+    [
+      "opencode-visual-cache@latest",
+      {
+        "enabled": true
+      }
+    ],
   ],
   "scroll_acceleration": {
     "enabled": true
