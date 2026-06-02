@@ -4,7 +4,6 @@
 
 | 源路径                   | 目标链接                  | 软件                                       | 说明                                                           |
 | ------------------------ | ------------------------- | ------------------------------------------ | -------------------------------------------------------------- |
-| `dotfiles/.npmrc`        | `~/.npmrc`                | [npm](https://www.npmjs.com/)              | npm 镜像源（淘宝镜像）                                         |
 | `dotfiles/starship.toml` | `~/.config/starship.toml` | [Starship](https://starship.rs/)           | 跨 Shell 终端提示符美化                                        |
 | `dotfiles/uv/uv.toml`    | `~/.config/uv/uv.toml`    | [uv](https://docs.astral.sh/uv/)           | Python 包管理器，清华 PyPI 镜像                                |
 | `dotfiles/nvim/`         | `~/.config/nvim/`         | [Neovim](https://neovim.io/)               | 编辑器配置，详见 [nvim/README.md](dotfiles/nvim/README.md)     |
