@@ -3,7 +3,7 @@
   "plugin": [
     "superpowers@git+https://github.com/jnMetaCode/superpowers-zh.git",
     "opencode-visual-cache@latest",
-    "@tarquinen/opencode-smart-title",
+    "@frankhommers/opencode-smart-title",
     "@warp-dot-dev/opencode-warp"
   ]
 }
