@@ -14,5 +14,5 @@
   // Update title every N idle events (default: 1)
   "updateThreshold": 1,
   "prompt": "Generate short Chinese titles for this conversation.",
-  "titleFormat": "[{cwdTip}] {title}"
+  "titleFormat": "{title}"
 }
