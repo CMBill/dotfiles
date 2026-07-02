@@ -38,7 +38,7 @@ export EDITOR='nvim'
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light agkozak/zsh-z
+# zinit light agkozak/zsh-z
 
 # Starship
 eval "$(starship init zsh)"
@@ -50,18 +50,17 @@ export LC_ALL=zh_CN.UTF-8
 # 别名
 alias ls='ls --color=auto'
 alias ll='ls -alhF'
-alias lsd='lsd -alhF'
+alias eza='eza -lahF --icons'
+# alias lsd='lsd -alhF'
 alias grep='grep --color=auto'
 
+# wsl 中 VSCode 配置
 export PATH="$PATH:/mnt/c/Program Files/Microsoft VS Code/bin"
 
-# pnpm
-export PNPM_HOME="/home/bill/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+# fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
 
-# opencode
-export PATH=/home/bill/.opencode/bin:$PATH
+# zoxide
+eval "$(zoxide init zsh)"
+
+export GPG_TTY=$(tty)
