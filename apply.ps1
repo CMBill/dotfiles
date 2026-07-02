@@ -25,7 +25,7 @@ Write-Host "Starting dotfiles deployment from: $SourceDir"
 
 # 确保必要目录存在
 $ConfigDir = Join-Path $HomeDir '.config'
-@($ConfigDir, "$env:LOCALAPPDATA\nvim", "$env:APPDATA\alacritty", "$env:APPDATA\Zellij", "$HomeDir\.pi\agent") | ForEach-Object {
+@($ConfigDir, "$env:LOCALAPPDATA\nvim", "$env:APPDATA\Zellij") | ForEach-Object {
     if (-not (Test-Path $_)) {
         New-Item -ItemType Directory -Path $_ -Force | Out-Null
     }
@@ -125,13 +125,8 @@ function Create-Symlink {
 # 1. 位于 Home 目录的配置
 Create-Symlink -SourcePath (Join-Path $SourceDir '.npmrc') -TargetPath (Join-Path $HomeDir '.npmrc')
 
-# 2. 位于 ~/.config 目录的配置（wezterm / starship / opencode 在 Windows 也沿用此路径）
+# 2. 位于 ~/.config 目录的配置（starship / opencode 在 Windows 也沿用此路径）
 Create-Symlink -SourcePath (Join-Path $SourceDir 'starship.toml') -TargetPath (Join-Path $ConfigDir 'starship.toml')
-# Check that wezterm submodule has been initialized (git submodule update --init)
-if ((Test-Path (Join-Path $SourceDir 'wezterm')) -and -not (Test-Path (Join-Path (Join-Path $SourceDir 'wezterm') 'wezterm.lua'))) {
-    Write-Warning "wezterm submodule not initialized. Run: git submodule update --init"
-}
-Create-Symlink -SourcePath (Join-Path $SourceDir 'wezterm') -TargetPath (Join-Path $ConfigDir 'wezterm')
 
 $OpenCodeSource = Join-Path $SourceDir 'opencode'
 $OpenCodeTarget = Join-Path $ConfigDir 'opencode'
@@ -141,14 +136,8 @@ Get-ChildItem -Path $OpenCodeSource -File | ForEach-Object {
 
 # 3. Windows 特有路径
 Create-Symlink -SourcePath (Join-Path $SourceDir 'nvim') -TargetPath (Join-Path $env:LOCALAPPDATA 'nvim')
-Create-Symlink -SourcePath (Join-Path $SourceDir 'alacritty') -TargetPath (Join-Path $env:APPDATA 'alacritty')
 Create-Symlink -SourcePath (Join-Path $SourceDir 'zellij') -TargetPath (Join-Path $env:APPDATA 'Zellij\config')
 
-# 4. pi 配置（仅 models.json 和 settings.json）
-$PiSource = Join-Path $SourceDir 'pi'
-$PiTarget = Join-Path $HomeDir '.pi\agent'
-Get-ChildItem -Path $PiSource -File | ForEach-Object {
-    Create-Symlink -SourcePath $_.FullName -TargetPath (Join-Path $PiTarget $_.Name)
-}
+
 
 Write-Host "Deployment completed successfully!"
