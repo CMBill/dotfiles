@@ -1,3 +1,0 @@
-[submodule "dotfiles/wezterm"]
-	path = dotfiles/wezterm
-	url = git@github.com:CMBill/wezterm-config.git
