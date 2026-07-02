@@ -62,5 +62,3 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 
 # zoxide
 eval "$(zoxide init zsh)"
-
-export GPG_TTY=$(tty)
