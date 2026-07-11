@@ -48,16 +48,12 @@ create_symlink "$SOURCE_DIR/.npmrc" "$HOME/.npmrc"
 # create_symlink "$SOURCE_DIR/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
 
 # 2. 位于 ~/.config 目录的配置
-create_symlink "$SOURCE_DIR/nvim" "$HOME/.config/nvim"
 create_symlink "$SOURCE_DIR/starship.toml" "$HOME/.config/starship.toml"
 create_symlink "$SOURCE_DIR/uv" "$HOME/.config/uv"
 
 # 3. 位于 ~/.config/opencode 目录的配置（逐个文件链接）
 mkdir -p "$HOME/.config/opencode"
-create_symlink "$SOURCE_DIR/opencode/AGENTS.md" "$HOME/.config/opencode/AGENTS.md"
-create_symlink "$SOURCE_DIR/opencode/magic-context.jsonc" "$HOME/.config/opencode/magic-context.jsonc"
-create_symlink "$SOURCE_DIR/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
-create_symlink "$SOURCE_DIR/opencode/smart-title.jsonc" "$HOME/.config/opencode/smart-title.jsonc"
-create_symlink "$SOURCE_DIR/opencode/tui.json" "$HOME/.config/opencode/tui.json"
+create_symlink "$SOURCE_DIR/opencode/opencode.jsonc" "$HOME/.config/opencode/opencode.jsonc"
+create_symlink "$SOURCE_DIR/opencode/tui.jsonc" "$HOME/.config/opencode/tui.jsonc"
 
 echo "Deployment completed successfully!"
