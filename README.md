@@ -10,8 +10,10 @@
 | `dotfiles/.gitconfig`    | `~/.gitconfig`            | [Git](https://git-scm.com/)      | Git 全局配置，含 GPG 签名，使用前应先配置 GPG 私钥 |
 | `dotfiles/.npmrc`        | `~/.npmrc`                | [npm](https://www.npmjs.com/)    | npm 镜像源（淘宝镜像）                             |
 | `dotfiles/starship.toml` | `~/.config/starship.toml` | [Starship](https://starship.rs/) | 跨 Shell 终端提示符美化                            |
-| `dotfiles/uv/uv.toml`    | `~/.config/uv/uv.toml`    | [uv](https://docs.astral.sh/uv/) | Python 包管理器，清华 PyPI 镜像                    |
-| `dotfiles/opencode/`     | `~/.config/opencode/`     | [OpenCode](https://opencode.ai)  | AI 编码助手配置                                    |
+| `dotfiles/uv/uv.toml`    | `~/.config/uv/uv.toml`    | [uv](https://docs.astral.sh/uv/) | Python 包管理器，清华 PyPI 镜像                          |
+| `dotfiles/helix/`        | `~/.config/helix/`        | [Helix](https://helix-editor.com)| 编辑器配置（Catppuccin Mocha 主题）                       |
+| `dotfiles/yazi/`         | `~/.config/yazi/`         | [Yazi](https://yazi-rs.github.io)| 终端文件管理器主题（Catppuccin Mocha 风格）              |
+| `dotfiles/opencode/`     | `~/.config/opencode/`     | [OpenCode](https://opencode.ai)  | AI 编码助手配置                                          |
 
 ## 脚本用法
 

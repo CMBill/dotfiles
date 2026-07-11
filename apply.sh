@@ -51,7 +51,11 @@ create_symlink "$SOURCE_DIR/.npmrc" "$HOME/.npmrc"
 create_symlink "$SOURCE_DIR/starship.toml" "$HOME/.config/starship.toml"
 create_symlink "$SOURCE_DIR/uv" "$HOME/.config/uv"
 
-# 3. 位于 ~/.config/opencode 目录的配置（逐个文件链接）
+# 3. 位于 ~/.config 目录的应用配置（逐个目录链接）
+create_symlink "$SOURCE_DIR/helix" "$HOME/.config/helix"
+create_symlink "$SOURCE_DIR/yazi" "$HOME/.config/yazi"
+
+# 4. 位于 ~/.config/opencode 目录的配置（逐个文件链接）
 mkdir -p "$HOME/.config/opencode"
 create_symlink "$SOURCE_DIR/opencode/opencode.jsonc" "$HOME/.config/opencode/opencode.jsonc"
 create_symlink "$SOURCE_DIR/opencode/tui.jsonc" "$HOME/.config/opencode/tui.jsonc"
