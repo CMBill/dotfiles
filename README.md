@@ -4,12 +4,13 @@
 
 ## 配置文件一览
 
-| 源路径                         | 目标链接 (Windows)                    | 软件                                       | 说明                                                                                                            |
-| ------------------------------ | ------------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| `dotfiles/.npmrc`              | `%USERPROFILE%\.npmrc`                | [npm](https://www.npmjs.com/)              | npm 镜像源（npmmirror）                                                                                         |
-| `dotfiles/starship.toml`       | `%USERPROFILE%\.config\starship.toml` | [Starship](https://starship.rs/)           | 跨 Shell 终端提示符美化，含 Nerd Fonts 图标映射                                                                 |
-| `dotfiles/nvim/`               | `%LOCALAPPDATA%\nvim`                 | [Neovim](https://neovim.io/)               | 编辑器配置，详见 [nvim/README.md](dotfiles/nvim/README.md)                                                      |
-| `dotfiles/opencode/`           | `%USERPROFILE%\.config\opencode`      | [OpenCode](https://opencode.ai)            | AI 编程助手配置（superpowers、smart-title、magic-context）                                                      |
+| 源路径                   | 目标链接 (Windows)                    | 软件                               | 说明                                                       |
+| ------------------------ | ------------------------------------- | ---------------------------------- | ---------------------------------------------------------- |
+| `dotfiles/.npmrc`        | `%USERPROFILE%\.npmrc`                | [npm](https://www.npmjs.com/)      | npm 镜像源（npmmirror）                                    |
+| `dotfiles/starship.toml` | `%USERPROFILE%\.config\starship.toml` | [Starship](https://starship.rs/)   | 跨 Shell 终端提示符美化，含 Nerd Fonts 图标映射            |
+| `dotfiles/nvim/`         | `%LOCALAPPDATA%\nvim`                 | [Neovim](https://neovim.io/)       | 编辑器配置，详见 [nvim/README.md](dotfiles/nvim/README.md) |
+| `dotfiles/opencode/`     | `%USERPROFILE%\.config\opencode`      | [OpenCode](https://opencode.ai)    | AI 编程助手配置（superpowers、smart-title、magic-context） |
+| `dotfiles/helix/`        | `%APPDATA%\helix`                     | [Helix](https://helix-editor.com/) | 编辑器配置（catppuccin_mocha 主题、光标形状、缩进辅助线）  |
 
 ## 部署
 

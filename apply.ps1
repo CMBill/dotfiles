@@ -137,7 +137,6 @@ Get-ChildItem -Path $OpenCodeSource -File | ForEach-Object {
 # 3. Windows 特有路径
 Create-Symlink -SourcePath (Join-Path $SourceDir 'nvim') -TargetPath (Join-Path $env:LOCALAPPDATA 'nvim')
 Create-Symlink -SourcePath (Join-Path $SourceDir 'zellij') -TargetPath (Join-Path $env:APPDATA 'Zellij\config')
-
-
+Create-Symlink -SourcePath (Join-Path $SourceDir 'helix') -TargetPath (Join-Path $env:APPDATA 'helix')
 
 Write-Host "Deployment completed successfully!"

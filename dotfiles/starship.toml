@@ -1,13 +1,22 @@
 add_newline = false
 
 [character]
-success_symbol = '[󰍲 ❯](bold green)'
-error_symbol = '[󰍲 ❯](bold red)'
+# success_symbol = '[❯](green)'
+# error_symbol = '[❯](bold red)'
+disabled = true
 
 [directory]
 truncate_to_repo=false
 truncation_length=0
 read_only = " 󰌾"
+
+[shell]
+fish_indicator = ' '
+powershell_indicator = '[_](blue)'
+unknown_indicator = 'mystery shell'
+style = 'cyan bold'
+disabled = false
+
 # Below is for Nerd Fonts
 [aws]
 symbol = " "
