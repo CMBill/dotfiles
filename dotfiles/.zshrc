@@ -31,14 +31,13 @@ bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 
-# 配置默认编辑器
-export EDITOR='nvim'
+# 配置默认编辑器 hx
+export EDITOR='hx'
 
 # 配置插件
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
-# zinit light agkozak/zsh-z
 
 # Starship
 eval "$(starship init zsh)"
@@ -51,8 +50,8 @@ export LC_ALL=zh_CN.UTF-8
 alias ls='ls --color=auto'
 alias ll='ls -alhF'
 alias eza='eza -lahF --icons'
-# alias lsd='lsd -alhF'
 alias grep='grep --color=auto'
+# alias bat='batcat'
 
 # wsl 中 VSCode 配置
 export PATH="$PATH:/mnt/c/Program Files/Microsoft VS Code/bin"
