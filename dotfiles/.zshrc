@@ -51,7 +51,7 @@ alias ls='ls --color=auto'
 alias ll='ls -alhF'
 alias eza='eza -lahF --icons'
 alias grep='grep --color=auto'
-# alias bat='batcat'
+alias hx='helix'
 
 # wsl 中 VSCode 配置
 export PATH="$PATH:/mnt/c/Program Files/Microsoft VS Code/bin"
